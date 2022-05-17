@@ -1,4 +1,3 @@
-<%@page import="it.refill.engine.Action"%>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,7 +12,7 @@
         <title>Login - MCN</title>
 
         <!-- Custom fonts for this template-->
-        <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" rel="stylesheet" type="text/css">
         <link href="css/googlefontcss.css" rel="stylesheet">
         <!-- Custom styles for this template-->
         <link href="css/sb-admin-2.min.css" rel="stylesheet">
@@ -37,7 +36,7 @@
                                 <div class="col-lg-6">
                                     <div class="p-5">
                                         <div class="text-center">
-                                            <h1 class="h4 text-gray-900 mb-4">Portale FAD</h1>
+                                            <h1 class="h4 text-gray-900 mb-4">Survey <br> YES I START UP 2021/2022</h1>
                                         </div>
 
                                         <hr>
@@ -47,9 +46,13 @@
                                         <hr>
                                        
                                         <div class="px-3 py-5 bg-gradient-danger text-white">
-                                            NON SI HANNO I PRIVILEGI NECESSARI PER ACCEDERE ALLA PIATTAFORMA.CONTATTARE L'AMMINISTRATORE.
+                                            <%if(session.getAttribute("logerr")==null){%>
+                                                NON SI HANNO I PRIVILEGI NECESSARI PER ACCEDERE ALLA PIATTAFORMA.CONTATTARE L'AMMINISTRATORE.
+                                            <%}else{%>
+                                                <%=session.getAttribute("logerr")%>
+                                            <%}%>
                                             <hr>
-                                            <a class="btn btn-danger btn-icon-split" href="login.jsp">
+                                            <a class="btn btn-danger btn-icon-split" href="login_mcn.jsp">
                                                 <span class="icon text-white-50">
                                                     <i class="fas fa-home"></i>
                                                 </span>

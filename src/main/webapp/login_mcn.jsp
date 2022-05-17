@@ -10,7 +10,8 @@
         <meta name="description" content="">
         <meta name="author" content="">
         <title>Survey - MCN</title>
-        <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+        
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" rel="stylesheet" type="text/css">
         <link href="css/googlefontcss.css" rel="stylesheet">
         <link href="css/sb-admin-2.min.css" rel="stylesheet">
 
@@ -51,12 +52,11 @@
                     String play = Action.getRequestValue(request, "play");
                     String utente = Action.getRequestValue(request, "us");
                     //utente = Action.generaidsurvey("N", "I", "963");
-
                     String[] dati = Action.getCF(utente);
                 %>
 
 
-                <%if (!play.equals("YRC")) {%>
+                <%if (!play.equals("YRC") || session.getAttribute("lsrv") == null) {%>
                 <div class="col-xl-10 col-lg-12 col-md-9">
                     <div class="card o-hidden border-0 shadow-lg my-5">
                         <div class="card-body p-0">
@@ -75,7 +75,6 @@
                                             <input type="hidden" name="iduser" value="<%=dati[2]%>" />
 
                                             <div class="input-group mb-3">
-                                                \
                                                 <div class="input-group-prepend">
                                                     <span class="input-group-text" id="basic-addon1"><i class="fa fa-user"></i></span>
                                                 </div>
@@ -97,12 +96,16 @@
                         </div>
                     </div>
                 </div>
-                <%} else {%>
+                <%} else {
+
+                %>
                 <div class="col-xl-10 col-lg-12 col-md-9">
                     <div class="card o-hidden border-0 shadow-lg my-5">
                         <div class="card-body p-0">
                             <div class="embed-responsive embed-responsive-4by3">
-                                <iframe class="embed-responsive-item" src="https://stage-surveyb.bss-lab.it/s/b3b3f0f7-e17c-4339-adf3-85ea4a1777b2"></iframe>
+                                <iframe class="embed-responsive-item" 
+                                        src="<%=session.getAttribute("lsrv")%>">
+                                </iframe>
                             </div>
                         </div>
                     </div>
