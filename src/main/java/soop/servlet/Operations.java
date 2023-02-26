@@ -78,7 +78,6 @@ public class Operations extends HttpServlet {
 
             db.closeDB();
         } catch (Exception ex) {
-            ex.printStackTrace();
             msg += ex.getMessage();
         }
 

@@ -60,18 +60,18 @@ public class Action {
     }
     
 
-    public static void main(String[] args) {
-        String idgenerato = generaidsurvey("D", "I", "2693");
-
-        String[] out = getCF(idgenerato);
-        //N - D
-        //5 numeri
-        //I - U
-        //5 lettere
-        // numeri id
-        // char - 
-        //5 lettere
-        System.out.println(idgenerato + " soop.engine.Action.main() "
-                + Arrays.asList(out).toString());
-    }
+//    public static void main(String[] args) {
+//        String idgenerato = generaidsurvey("D", "I", "2693");
+//
+//        String[] out = getCF(idgenerato);
+//        //N - D
+//        //5 numeri
+//        //I - U
+//        //5 lettere
+//        // numeri id
+//        // char - 
+//        //5 lettere
+//        System.out.println(idgenerato + " soop.engine.Action.main() "
+//                + Arrays.asList(out).toString());
+//    }
 }

@@ -38,12 +38,11 @@ public class Database {
             p.put("useUnicode", "true");
             this.c = DriverManager.getConnection("jdbc:mysql://" + host, p);
         } catch (Exception ex) {
-            ex.printStackTrace();
             if (this.c != null) {
                 try {
                     this.c.close();
                 } catch (Exception ex1) {
-                    ex1.printStackTrace();
+                    
                 }
             }
             this.c = null;
@@ -55,8 +54,7 @@ public class Database {
             if (this.c != null) {
                 this.c.close();
             }
-        } catch (SQLException ex) {
-            ex.printStackTrace();
+        } catch (Exception ex) {
         }
     }
 
@@ -76,8 +74,8 @@ public class Database {
                     }
                 }
             }
-        } catch (SQLException ex) {
-            ex.printStackTrace();
+        } catch (Exception ex) {
+            
         }
         return path;
     }
